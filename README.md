@@ -10,3 +10,4 @@ oraz .env do przechowywania zmiennych środowiskowych.
 
 zbudowanie obrazów: docker-compose build 
 uruchomienie aplikacji: docker-compose up
+ubij wszsytkie kontenery: docker kill $(docker ps -q)
