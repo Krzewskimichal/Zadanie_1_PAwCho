@@ -1,0 +1,19 @@
+version: "3.9"
+
+services:
+  sever:
+    build:
+      context: ..
+      dockerfile: ../src/Dockerfile
+    ports:
+      - ${FLASK_PORT}
+    volumes:
+      - .:/src
+    environment:
+      FLASK_PORT: ${FLASK_PORT}
+      MY_TOKEN: ${MY_TOKEN}
+      REDIS_PORT: ${REDIS_PORT}
+      AUTHOR_FIRST_NAME: ${AUTHOR_FIRST_NAME}
+      AUTHOR_LAST_NAME: ${AUTHOR_LAST_NAME}
+  redis:
+    image: "redis:alpine"
